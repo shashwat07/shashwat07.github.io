@@ -44,8 +44,10 @@ a:hover, li:hover {
 	padding:1.5%;
 	left:0px;
 	top:0px;
+	right:0px;
 	z-index:1000;
 	box-sizing: border-box;
+	margin-right: 0;
 }
 
 #footer{
@@ -66,15 +68,18 @@ a:hover, li:hover {
  
 body{
 	background-color:#FFF;
+	width: 100%;
 }
 
 #wholeBody{
 	padding-left:8%;
-	padding-right:8%;
+	padding-right:0%;
+	width:100%;
 }
 
 .content{
 	padding-top: 9%;
+	width: 100%;
 	
 }
 
