@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Shashwat</title>
+		<link rel="shortcut icon" href="images/favicon.png" type="image/png">
+		<link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="CSS/mystyle.css">
+		
+	</head>
+	<body>
+		<div id="header" class ="row description no-margin">
+			<div class ="col-lg-1 col-md-1 col-sm-1 col-xs-1 "></div>
+			<div class ="col-lg-2 col-md-2 col-sm-2 col-xs-2 "><a href="#home">Home</a></div>
+			<div class ="col-lg-2 col-md-2 col-sm-2 col-xs-2 "><a href="#me">About Me</a></div>
+			<div class ="col-lg-2 col-md-2 col-sm-2 col-xs-2 "><a href="#contact">Contact Me</a></div>
+			<div class ="col-lg-2 col-md-2 col-sm-2 col-xs-2 "><a href="#photo">Photos</a></div>
+			<div class ="col-lg-2 col-md-2 col-sm-2 col-xs-2 "><a href="galleryAdmin.html">Gallery Admin</a></div>
+			<div class ="col-lg-1 col-md-1 col-sm-1 col-xs-1 "></div>
+		</div>
+		<div id="wholeBody">
+			
+
+			
+
+
+			<div id="photo" class="content">
+				<h2>Gallery Admin</h2>
+				<div class ="buttons">
+					<button type="button" class="button" id="addImage" data-toggle="modal" data-target="#addModal">Add Image</button>
+				</div>
+				<br>
+				Click on the image to Modify/Remove
+				<br>
+				<br>
+				<div class="row container img-thumbnail  description" id="addImg"></div>
+			</div>
+
+			
+			
+		</div>
+
+
+		<!--Modal-->
+		<div class="modal fade" id="addModal">
+			<div class="modal-dialog">
+		      <div class="modal-content">
+		        
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4>Add Image</h4>
+		        </div>
+		        
+		        <div class="modal-body">
+		          <form role="form" name="modalForm">
+		            
+		            <div class="form-group">
+		              <label for="alt">Image Alternate Text</label>
+		              <input type="text" class="form-control" id="imgAlt" placeholder="Image name" required>
+		            </div>
+		            
+		            <div class="form-group">
+		              <label for="url">Image URL</label>
+		              <input type="url" class="form-control" id="imgUrl" placeholder="eg. https://www.abc.com/img.jpg" required>
+		            </div>
+		            
+		            <div class="form-group">
+		              <label for="info">Image Information</label>
+		              <input type="text" class="form-control" id="imgInfo" placeholder="Enter image information" required>
+		            </div>
+
+		            <div class="form-group">
+		              <label for="info">Upload Date</label>
+		              <input type="date" class="form-control" id="upDate" required>
+		            </div> 
+
+		            <div class="modalFooter row text-center">
+		              <div class="col-md-12"><button type="button" id="add" class="btn btn-success">Add Image</button></div>
+		             </div>
+		          </form>
+		        </div>
+		      </div>
+	      </div>
+      </div>
+      
+
+      <!--Edit/Remove Modal-->
+
+      <div class="modal fade" id="editModal">
+			<div class="modal-dialog">
+		      <div class="modal-content">
+		        
+		        <div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		          <h4>Edit/Remove</h4>
+		        </div>
+		        
+		        <div class="modal-body">
+		          <form role="form" name="modalFormEdit">
+		            
+		            <div class="form-group">
+		              <label for="alt">Image Alternate Text</label>
+		              <input type="text" class="form-control" id="imgAltEdit" placeholder="Image name" required>
+		            </div>
+		            
+		            <div class="form-group">
+		              <label for="url">Image URL</label>
+		              <input type="url" class="form-control" id="imgUrlEdit" placeholder="eg. https://www.abc.com/img.jpg"  required>
+		            </div>
+		            
+		            <div class="form-group">
+		              <label for="info">Image Information</label>
+		              <input type="text" class="form-control" id="imgInfoEdit" placeholder="Enter image information" required>
+		            </div>
+
+		            <div class="form-group">
+		              <label for="info">Upload Date</label>
+		              <input type="date" class="form-control" id="upDateEdit" required>
+		            </div> 
+
+		            <div class="modalFooter row text-center">
+		              <div class="col-md-6"><button type="button" id="edit" class="btn btn-success">Edit Image</button></div>
+		              <div class="col-md-6"><button type="button" id="remove" class="btn btn-danger">Remove Image</button></div>
+		             </div>
+		          </form>
+		        </div>
+		      </div>
+	      </div>
+      </div>
+
+		
+		
+		<div id="footer">
+			<p>&copy; Shashwat India Corporation Limited. All Rights Reserved. </p>
+		</div>
+		<script src="JS/jquery-3.2.1.js" type="text/javascript" ></script>
+		<script src="JS/bootstrap.js" type="text/javascript" ></script>
+		<script src="JS/gallery.json" type="text/javascript"></script>
+		<script src="JS/myscript.js"  type="text/javascript" ></script>
+	</body>
+</html>

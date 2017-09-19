@@ -1,20 +1,4 @@
-ul{
-	display:inline;
-	margin:3% auto; 
-	text-align:center;
-	list-style-type:none;
-}
 
-li {
-  color: #FFF;
-  display: inline;
-  font-family: "Comic Sans Ms" ;
-  font-size: 20px;
-  text-align: left;
-  font-weight: 100;
-  padding: 0 4%;
-  text-align:center;
-}
 
 .no-margin{
 	margin-left: 0px;
@@ -75,7 +59,7 @@ body{
 
 #wholeBody{
 	padding-left:8%;
-	padding-right:0%;
+	padding-right:6%;
 	width:100%;
 }
 
@@ -108,3 +92,28 @@ body{
 	display:inline;
 	color: #FFF;
 }
+
+p>a:link, p>a:hover, p>a:visited{
+	color:#c50717;
+}
+
+.gAdmin{
+	text-align: right;
+	padding:2%;
+
+
+}
+
+.buttons{
+	text-align: right;
+}
+
+.button{
+	margin: 0 1% 0 1%;
+	background-color: #601c4c;
+	border:none;
+	color:white;
+	padding:1% 1.5%;
+	border-radius: 3px;
+}
+
