@@ -8,12 +8,15 @@ window.onload = function loadMenu(){
 		var name = food[index].name;
 		var price = food[index].price;
 		var id = "food" + food[index].id;
-
 		txt+='<div id="' + id + '" class="item" draggable="true" ondragstart="drag(event)"><h5>' + name + '</h5>Rs. ' + price +  '</div>';
 	}
 	document.getElementById('items').innerHTML = txt;	
 }
 
+var orderTracker=new Map();
+for(var i=1;i<=5;i++){
+	orderTracker.set("table" + i , new Map());
+}
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -21,11 +24,6 @@ function allowDrop(ev) {
 
 function drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
-}
-
-var orderTracker=new Map();
-for(var i=1;i<=5;i++){
-	orderTracker.set("table" + i , new Map());
 }
 
 function drop(ev) {
@@ -40,7 +38,6 @@ function drop(ev) {
   	}
   	count++;
   	thisTable.set(data,count);
-
   	setCount(currentTable);
 	
 }
@@ -51,25 +48,22 @@ function setCount(currentTable){
 	thisTable.forEach(function(value, key) {
 		numberOfOrders+=parseInt(value);
 	});
-
   	var tableId = "orderCount"+currentTable[5];
-  	document.getElementById(tableId).innerHTML= 'Total order Count : ' + numberOfOrders;
+  	document.getElementById(tableId).innerHTML= 'Total Order Count : ' + numberOfOrders;
 }
 
 function generateBill(tabId){
 	var thisTable = orderTracker.get(tabId);
 	var total=0;
 	var text="";
-	var index=0;
 	thisTable.forEach(function(value, key) {
 		var foodId = key[4];
 		var bill = food[foodId].price*value;
-		text+='<div id="itemName" class="col-sm-4">' + food[foodId].name + '</div>';
-		text+='<div id="itemQuantity' + index + '" class="col-sm-3" contenteditable="true">' + value + '</div>';
-		text+='<div id="itemTotal" class="col-sm-3">' + bill + '</div>';
-		text+='<div class="col-sm-2"><img id="del' + foodId + '"src="images/delete.png" height="20px" onclick="removeItem(id)"></div>';
+		text+='<div id="itemName' + foodId + '" class="col-sm-4">' + food[foodId].name + '</div>';
+		text+='<div id="itemQuantity' + foodId + '" class="col-sm-3" contenteditable="true">' + value + '</div>';
+		text+='<div id="itemTotal' + foodId + '" class="col-sm-3">' + bill + '</div>';
+		text+='<div id="delImg' + foodId +'"class="col-sm-2"><img id="del' + foodId + '"src="images/delete.png" height="20px" onclick="removeItem(id)"></div>';
 		total+=bill;
-		index++;
 	});
 
 	document.getElementById('bill').innerHTML=text;
@@ -81,20 +75,17 @@ function generateBill(tabId){
 
 function updateOrder(){
 	var thisTable = orderTracker.get(currentTable);
-	var index=0;
 	var element;
 	var count;
 	var total = 0;
 	var numberOfOrders=0;
 	thisTable.forEach(function(value, key) {
-		element = document.getElementById("itemQuantity" + index);
+		element = document.getElementById("itemQuantity" + key[4]);
 		count = element.innerHTML;
 		thisTable.set(key,count);
 		var foodId = key[4];
 		var bill = food[foodId].price*count;
-
 		total+=bill;
-		index++;
 	});
 
 	document.getElementById('totalAmount').innerHTML=total;
@@ -108,16 +99,29 @@ function removeItem(id){
 	var key = "food" + id[3];
 	thisTable.delete(key);
 	setCount(currentTable);
-	$("#getBill").modal('hide');
-	generateBill(currentTable);
+
+	document.getElementById("itemName" + id[3]).style.display="none";
+	document.getElementById("itemQuantity" + id[3]).style.display="none";
+	document.getElementById("itemTotal" + id[3]).style.display="none";
+	document.getElementById("delImg" + id[3]).style.display="none";
+
+	var total=0;
+	thisTable.forEach(function(value, key) {
+		element = document.getElementById("itemQuantity" + key[4]);
+		count = element.innerHTML;
+		thisTable.set(key,count);
+		var foodId = key[4];
+		var bill = parseInt(food[foodId].price)*parseInt(count);
+		total+=bill;
+	});
+
+	document.getElementById('totalAmount').innerHTML=total;
 }
 
 
 function closeSession(){
-
 	var clearTable = orderTracker.get(currentTable);
 	clearTable.clear();
-
 	$("#getBill").modal('hide');
 	var orderCount = 'orderCount' + currentTable[5];
   	document.getElementById(orderCount).innerHTML= '';
