@@ -57,7 +57,6 @@ function setCount(currentTable){
 }
 
 function generateBill(tabId){
-	alert(tabId);
 	var thisTable = orderTracker.get(tabId);
 	var total=0;
 	var text="";
