@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Restaurant</title>
+		<link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="CSS/mystyle.css">
+		<script src="JS/jquery-3.2.1.js" type="text/javascript" ></script>
+		<script src="JS/bootstrap.js" type="text/javascript" ></script>
+		<script src="JS/menu.json"  type="text/javascript" ></script>
+		<script src="JS/myscript.js"  type="text/javascript" ></script>
+		
+	</head>
+	<body>
+		<div id="wholeBody" class="row">
+			<div id="tables" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+				<div id="heading"><h2>Tables</h2></div>
+				<input id="searchTable" type="search" placeholder="Search" class="col-sm-12"  onkeyup="searchTable()" >	
+				<div id="tableAll">
+					<div id="table1" class="table" onclick="generateBill(id)" ondrop="drop(event)" ondragover="allowDrop(event)"><h6>Table-1</h6>Add Items here<div id="orderCount1" class="count"></div></div>
+					<div id="table2" class="table" onclick="generateBill(id)" ondrop="drop(event)" ondragover="allowDrop(event)"><h6>Table-2</h6>Add Items here<div id="orderCount2" class="count"></div></div>
+					<div id="table3" class="table" onclick="generateBill(id)" ondrop="drop(event)" ondragover="allowDrop(event)"><h6>Table-3</h6>Add Items here<div id="orderCount3" class="count"></div></div>
+					<div id="table4" class="table" onclick="generateBill(id)" ondrop="drop(event)" ondragover="allowDrop(event)"><h6>Table-4</h6>Add Items here<div id="orderCount4" class="count"></div></div>
+					<div id="table5" class="table" onclick="generateBill(id)" ondrop="drop(event)" ondragover="allowDrop(event)"><h6>Table-5</h6>Add Items here<div id="orderCount5" class="count"></div></div>
+				</div>
+
+			</div>
+
+			<div id="menu" class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+				<div id="heading"><h2>Menu</h2></div>
+				<input id="searchMenu" type="search" placeholder="Search Menu" class="col-sm-9" onkeyup="searchMenu()" >
+				<div id="items"></div>
+			</div>
+
+			<!--Modal-->
+			<div class="modal fade" id="getBill">
+				<div class="modal-dialog">
+			      	<div class="modal-content">
+				        
+				        <div class="modal-header">
+				          <button type="button" class="close" data-dismiss="modal">&times;</button>
+				          <h4>Bill</h4>
+				        </div>
+
+			        	<div class="modal-body">
+			        		<div id="bill" class="row"></div>
+				          	<div id ="total" class="row">
+				          		<div class="col-sm-3">Total Bill : </div>
+				          		<div id="totalAmount" class="col-sm-9"></div>
+				          	</div>
+				        </div>
+
+				        <div class="modalFooter row text-center">
+				        	<div class="col-md-6"><button onclick="updateOrder()" type="button" id="updateOrder" class="btn btn-info">Update Order</button></div>
+	              			<div class="col-md-6"><button onclick="closeSession()" type="button" id="closeSession" class="btn btn-danger">End Session</button></div>
+	             		</div>
+			      	</div>
+		      	</div>
+	      	</div>
+		
+			
+		</div>
+		
+	</body>
+</html>
