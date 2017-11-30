@@ -1,0 +1,20 @@
+{
+  "name": "My Website",
+  "short_name": "CheckNotifications",
+  "gcm_sender_id": "554845192478",
+  "display": "standalone",
+  "gcm_user_visible_only": true
+}
+
+
+{
+    "request": {
+        "application": "APPLICATION_CODE",
+        "auth": "API_ACCESS_TOKEN",
+        "notifications": [{
+            "send_date": "now", // YYYY-MM-DD HH:mm  OR 'now'
+            "ignore_user_timezone": true, // or false
+            "content": "Hello world!"
+        }]
+    }
+}
