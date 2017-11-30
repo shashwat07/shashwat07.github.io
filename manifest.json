@@ -7,7 +7,7 @@
 }
 
 
-{
+/*{
     "request": {
         "application": "APPLICATION_CODE",
         "auth": "API_ACCESS_TOKEN",
@@ -17,4 +17,4 @@
             "content": "Hello world!"
         }]
     }
-}
+}*/
