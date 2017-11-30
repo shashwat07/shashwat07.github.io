@@ -95,7 +95,7 @@
 			    safariWebsitePushID: 'web.com.example.domain', //  unique reverse-domain string, obtained in you Apple Developer Portal
 			    defaultNotificationTitle: 'Pushwoosh', // sets a default title for push notifications
 			    defaultNotificationImage: 'https://yoursite.com/img/logo-medium.png', // URL to custom custom notification image
-			    autoSubscribe: false, // or false. If true, promts a user to subscribe for pushes upon SDK initialization
+			    autoSubscribe: true, // or false. If true, promts a user to subscribe for pushes upon SDK initialization
 			    userId: 'userId', // optional, set custom user ID
 			    tags: {
 			        'Name': 'Shashwat Sinha'   	// optional, set custom Tags
@@ -103,7 +103,7 @@
 			}]);
 		</script>
 
-		<button onclick="Pushwoosh.subscribe()">Subscribe</button>
+		<!-- <button onclick="Pushwoosh.subscribe()">Subscribe</button>
 		
 		<script>
 
@@ -118,7 +118,7 @@
 		    console.log('User successfully unsubscribed');
 		  }]);
 		</script>
-		
+		 -->
 		
 		<div id="footer">
 			<p>&copy; Shashwat India Corporation Limited. All Rights Reserved. </p>
