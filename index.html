@@ -103,8 +103,7 @@
 		<script type="text/javascript">
 
 			var interest = document.getElementById('myInterests').value;
-			alert(interest);
-			console.log("this prints");
+			
 
 			var Pushwoosh = Pushwoosh || [];
 			Pushwoosh.push(['init', {
@@ -113,11 +112,11 @@
 			    safariWebsitePushID: 'web.com.example.domain', //  unique reverse-domain string, obtained in you Apple Developer Portal
 			    defaultNotificationTitle: 'Pushwoosh', // sets a default title for push notifications
 			    defaultNotificationImage: 'https://yoursite.com/img/logo-medium.png', // URL to custom custom notification image
-			    autoSubscribe: true, // or false. If true, promts a user to subscribe for pushes upon SDK initialization
+			    autoSubscribe: false, // or false. If true, promts a user to subscribe for pushes upon SDK initialization
 			    //userId: 'userId', // optional, set custom user ID
-			    /*tags: {
-			        'Sports Interest':  $('.myInterest option:selected').text()	  	// optional, set custom Tags
-			    }	*/									
+			    tags: {
+			        'Sports Interest':  interest  	// optional, set custom Tags
+			    }										
 			}]);
 		</script>
 
