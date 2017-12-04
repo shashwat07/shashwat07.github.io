@@ -102,39 +102,46 @@
 		<!-- Pushwoosh -->
 		<script type="text/javascript">
 
-			var interest = document.getElementById('myInterests').value;
+			
 			
 
-			var Pushwoosh = Pushwoosh || [];
-			Pushwoosh.push(['init', {
-			    logLevel: 'info', // possible values: error, info, debug
-			    applicationCode: 'E3552-A6256', // you application code from Pushwoosh Control Panel
-			    safariWebsitePushID: 'web.com.example.domain', //  unique reverse-domain string, obtained in you Apple Developer Portal
-			    defaultNotificationTitle: 'Pushwoosh', // sets a default title for push notifications
-			    defaultNotificationImage: 'https://yoursite.com/img/logo-medium.png', // URL to custom custom notification image
-			    autoSubscribe: false, // or false. If true, promts a user to subscribe for pushes upon SDK initialization
-			    //userId: 'userId', // optional, set custom user ID
-			    tags: {
-			        'Sports Interest':  interest  	// optional, set custom Tags
-			    }										
-			}]);
+			
 		</script>
 
-		 <button onclick="Pushwoosh.subscribe()">Subscribe</button>
+		 <button onclick="PushSubs()">Subscribe</button>
+
+
 		
-		<!-- <script>
+		<script>
+			 function PushSubs(){
+			 	var interest = document.getElementById('myInterests').value;
+			 	var Pushwoosh = Pushwoosh || [];
+				Pushwoosh.push(['init', {
+				    logLevel: 'info', // possible values: error, info, debug
+				    applicationCode: 'E3552-A6256', // you application code from Pushwoosh Control Panel
+				    safariWebsitePushID: 'web.com.example.domain', //  unique reverse-domain string, obtained in you Apple Developer Portal
+				    defaultNotificationTitle: 'Pushwoosh', // sets a default title for push notifications
+				    defaultNotificationImage: 'https://yoursite.com/img/logo-medium.png', // URL to custom custom notification image
+				    autoSubscribe: true, // or false. If true, promts a user to subscribe for pushes upon SDK initialization
+				    //userId: 'userId', // optional, set custom user ID
+				    tags: {
+				        'Sports Interest':  interest  	// optional, set custom Tags
+				    }										
+				}]);
+			 	Pushwoosh.subscribe();
+			 }
 
 		Pushwoosh.push(['onSubscribe', function(api) {
 		      console.log('User successfully subscribed');
 		    }]);
-		</script> -->
+		</script>
 
 		<button onclick="Pushwoosh.unsubscribe()">Unsubscribe</button>
-		<!-- <script>
+		<script>
 		  Pushwoosh.push(['onUnsubscribe', function(api) {
 		    console.log('User successfully unsubscribed');
 		  }]);
-		</script>  -->
+		</script> 
 		 
 		
 		<div id="footer">
