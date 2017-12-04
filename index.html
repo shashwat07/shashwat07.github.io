@@ -91,7 +91,7 @@
 		</div>
 
 		Notify Me About : 
-		<select class="myInterest">
+		<select class="myInterest" id="myInterests">
 		  <option value="cric">Cricket</option>
 		  <option value="foot">Football</option>
 		  <option value="tenn">Tennis</option>
@@ -102,8 +102,9 @@
 		<!-- Pushwoosh -->
 		<script type="text/javascript">
 
-			var interest = $('.myInterest option:selected').text();
+			var interest = document.getElementById('myInterests');
 			alert(interest);
+			console.log("this prints");
 
 			var Pushwoosh = Pushwoosh || [];
 			Pushwoosh.push(['init', {
