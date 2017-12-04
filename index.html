@@ -87,8 +87,21 @@
 			
 		</div>
 
+		Notify Me About : 
+		<select class="myInterest">
+		  <option value="cric">Cricket</option>
+		  <option value="foot">Football</option>
+		  <option value="tenn">Tennis</option>
+		  <option value="kbdi">Kabaddi</option>
+		</select>
+
+
+
 		<!-- Pushwoosh -->
 		<script type="text/javascript">
+
+			var interest = $('.myInterest option:selected').text();
+
 			var Pushwoosh = Pushwoosh || [];
 			Pushwoosh.push(['init', {
 			    logLevel: 'info', // possible values: error, info, debug
@@ -96,15 +109,15 @@
 			    safariWebsitePushID: 'web.com.example.domain', //  unique reverse-domain string, obtained in you Apple Developer Portal
 			    defaultNotificationTitle: 'Pushwoosh', // sets a default title for push notifications
 			    defaultNotificationImage: 'https://yoursite.com/img/logo-medium.png', // URL to custom custom notification image
-			    autoSubscribe: true, // or false. If true, promts a user to subscribe for pushes upon SDK initialization
+			    autoSubscribe: false, // or false. If true, promts a user to subscribe for pushes upon SDK initialization
 			    userId: 'userId', // optional, set custom user ID
 			    tags: {
-			        'Name': 'Shashwat Sinha'   	// optional, set custom Tags
+			        'Sports Interest':  interest,	  	// optional, set custom Tags
 			    }										
 			}]);
 		</script>
 
-		<!-- <button onclick="Pushwoosh.subscribe()">Subscribe</button>
+		 <button onclick="Pushwoosh.subscribe()">Subscribe</button>
 		
 		<script>
 
@@ -119,7 +132,7 @@
 		    console.log('User successfully unsubscribed');
 		  }]);
 		</script>
-		 -->
+		 
 		
 		<div id="footer">
 			<p>&copy; Shashwat India Corporation Limited. All Rights Reserved. </p>
