@@ -132,14 +132,14 @@
 			 }
 
 			Pushwoosh.push(['onSubscribe', function(api) {
-		      console.log('User successfully subscribed');
+		      alert('Successfully subscribed');
 		    }]);
 		</script>
 
 		<button onclick="Pushwoosh.unsubscribe()">Unsubscribe</button>
 		<script>
 		  Pushwoosh.push(['onUnsubscribe', function(api) {
-		    console.log('User successfully unsubscribed');
+		    alert('Successfully unsubscribed');
 		  }]);
 		</script> 
 		 
