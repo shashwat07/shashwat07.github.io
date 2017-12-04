@@ -129,18 +129,17 @@
 				    }										
 				}]);
 			 	Pushwoosh.subscribe();
-			 	Pushwoosh.push(['onSubscribe', function(api) {
-			      alert('Successfully subscribed');
-			    }]);
 			 }
 
-			
+			Pushwoosh.push(['onSubscribe', function(api) {
+		      console.log('User successfully subscribed');
+		    }]);
 		</script>
 
 		<button onclick="Pushwoosh.unsubscribe()">Unsubscribe</button>
 		<script>
 		  Pushwoosh.push(['onUnsubscribe', function(api) {
-		    alert('Successfully unsubscribed');
+		    console.log('User successfully unsubscribed');
 		  }]);
 		</script> 
 		 
