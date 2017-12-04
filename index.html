@@ -103,7 +103,7 @@
 		<script type="text/javascript">
 
 			
-			
+			var Pushwoosh = Pushwoosh || [];
 
 			
 		</script>
@@ -115,7 +115,7 @@
 		<script>
 			 function PushSubs(){
 			 	var interest = document.getElementById('myInterests').value;
-			 	var Pushwoosh = Pushwoosh || [];
+			 	
 				Pushwoosh.push(['init', {
 				    logLevel: 'info', // possible values: error, info, debug
 				    applicationCode: 'E3552-A6256', // you application code from Pushwoosh Control Panel
@@ -131,7 +131,7 @@
 			 	Pushwoosh.subscribe();
 			 }
 
-		Pushwoosh.push(['onSubscribe', function(api) {
+			Pushwoosh.push(['onSubscribe', function(api) {
 		      console.log('User successfully subscribed');
 		    }]);
 		</script>
