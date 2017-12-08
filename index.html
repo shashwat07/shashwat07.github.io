@@ -84,11 +84,14 @@
 				<h2>Here are my pics! :)</h2>
 				<br>
 				<div class="row container img-thumbnail  description" id="addImg"></div>
-			</div> -->
+			</div> 
 
 			
 			
-		</div>
+		</div>-->
+
+		Some Link: <br>
+		<a href ="www.google.com" id="disableLink">track flight</a>
 
 		Notify Me About : 
 		<select class="myInterest" id="myInterests">
@@ -144,7 +147,7 @@
 
 
 		  Pushwoosh.push(['onPushDelivery', function(api) {
-		  	alert('this prints! lalalalalala');
+		  	document.getElementById("disableLink").disabled = true;
 		  }]);
 		</script> 
 
