@@ -136,7 +136,7 @@
 		    }]);
 
 		    Pushwoosh.push(['onReady', function(api) {
-			    console.log('Pushwoosh ready');
+			    alert('Pushwoosh ready');
 			}]);
 		</script>
 
@@ -158,11 +158,11 @@
 			};
 
 		  Pushwoosh.push(['onPushDelivery', function(api, payload) {
-		  	console.log('this prints!');
+		  	alert('this prints!');
 		    console.log('Event: onPushDelivery triggered', payload);
 		  }]);
 		  Pushwoosh.push(['onPushDelivery', function(api) {
-		  	console.log('this prints! lalalalalala');
+		  	alert('this prints! lalalalalala');
 		  }]);
 		</script> 
 
