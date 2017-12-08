@@ -141,7 +141,13 @@
 		  Pushwoosh.push(['onUnsubscribe', function(api) {
 		    console.log('User successfully unsubscribed');
 		  }]);
+
+		  Pushwoosh.push(['onPushDelivery', function(api, payload) {
+		    console.log('Event: onPushDelivery triggered', payload);
+		  }]);
 		</script> 
+
+
 		 
 		
 		<div id="footer">
