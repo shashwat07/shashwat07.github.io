@@ -142,6 +142,17 @@
 		    console.log('User successfully unsubscribed');
 		  }]);
 
+		  var payload = {
+			  title: 'Notification Title',
+			  body: 'Notification text message',
+			  icon: 'https://yoursite.com/img/logo-medium.png',
+			  openUrl: 'https://yoursite.com/some/path',
+			  messageHash: '2m',
+			  customData: {
+			    foo: 'bar'
+			  }
+			};
+
 		  Pushwoosh.push(['onPushDelivery', function(api, payload) {
 		  	console.log('this prints!');
 		    /*console.log('Event: onPushDelivery triggered', payload);*/
