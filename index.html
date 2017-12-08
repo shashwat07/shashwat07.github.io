@@ -143,8 +143,11 @@
 		  }]);
 
 		  Pushwoosh.push(['onPushDelivery', function(api, payload) {
-		  	console.log("this prints!");
+		  	console.log('this prints!');
 		    /*console.log('Event: onPushDelivery triggered', payload);*/
+		  }]);
+		  Pushwoosh.push(['onPushDelivery', function(api) {
+		  	console.log('this prints! lalalalalala');
 		  }]);
 		</script> 
 
