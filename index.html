@@ -134,10 +134,6 @@
 			Pushwoosh.push(['onSubscribe', function(api) {
 		      console.log('User successfully subscribed');
 		    }]);
-
-		    Pushwoosh.push(['onReady', function(api) {
-			    alert('Pushwoosh ready');
-			}]);
 		</script>
 
 		<button onclick="Pushwoosh.unsubscribe()">Unsubscribe</button>
@@ -146,21 +142,7 @@
 		    console.log('User successfully unsubscribed');
 		  }]);
 
-		  var payload = {
-			  title: 'Notification Title',
-			  body: 'Notification text message',
-			  icon: 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png',
-			  openUrl: 'https://yoursite.com/some/path',
-			  messageHash: '2m',
-			  customData: {
-			    foo: 'bar'
-			  }
-			};
 
-		  Pushwoosh.push(['onPushDelivery', function(api, payload) {
-		  	alert('this prints!');
-		    console.log('Event: onPushDelivery triggered', payload);
-		  }]);
 		  Pushwoosh.push(['onPushDelivery', function(api) {
 		  	alert('this prints! lalalalalala');
 		  }]);
