@@ -93,6 +93,7 @@
 		Some Link: <br>
 		<a href ="www.google.com" id="disableLink">track flight</a>
 
+		<br> <br>
 		Notify Me About : 
 		<select class="myInterest" id="myInterests">
 		  <option value="cric">Cricket</option>
@@ -117,6 +118,11 @@
 				    autoSubscribe: false, // or false. If true, promts a user to subscribe for pushes upon SDK initialization
 				    //userId: 'userId', // optional, set custom user ID									
 				}]);
+
+
+			function disableDOM(){
+				document.getElementById('disableLink').disabled = true;
+			}
 
 			
 		</script>
@@ -151,7 +157,7 @@
 
 		  Pushwoosh.push(['onPushDelivery', function(api) {
 		  	alert("this works");
-		  	document.getElementById("disableLink").disabled = true;
+		  	disableDOM();
 		  }]);
 		</script> 
 
