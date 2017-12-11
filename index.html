@@ -136,12 +136,16 @@
 		<script>
 			 function PushSubs(){
 			 	var interest = document.getElementById('myInterests').value;
-			 	
+			 	/*
 				Pushwoosh.push(['init', {
 				    tags: {
 				        'Sports Interest':  interest  	// optional, set custom Tags
 				    }										
-				}]);
+				}]);*/
+
+				Pushwoosh.setTags({ "Sports Interest" : interest});
+
+
 			 	Pushwoosh.subscribe();
 			 }
 
