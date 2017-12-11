@@ -111,7 +111,7 @@
 			
 			var Pushwoosh = Pushwoosh || [];
 
-			Pushwoosh.push(['init', {
+			/*Pushwoosh.push(['init', {
 				    logLevel: 'info', // possible values: error, info, debug
 				    applicationCode: 'E3552-A6256', // you application code from Pushwoosh Control Panel
 				    safariWebsitePushID: 'web.com.example.domain', //  unique reverse-domain string, obtained in you Apple Developer Portal
@@ -119,7 +119,7 @@
 				    defaultNotificationImage: 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png', // URL to custom custom notification image
 				    autoSubscribe: false // or false. If true, promts a user to subscribe for pushes upon SDK initialization
 				    //userId: 'userId', // optional, set custom user ID									
-				}]);
+				}]);*/
 
 
 			function disableDOM(){
@@ -138,12 +138,12 @@
 			 	var interest = document.getElementById('myInterests').value;
 			 	
 				Pushwoosh.push(['init', {
-					/*logLevel: 'info', // possible values: error, info, debug
+					logLevel: 'info', // possible values: error, info, debug
 				    applicationCode: 'E3552-A6256', // you application code from Pushwoosh Control Panel
 				    safariWebsitePushID: 'web.com.example.domain', //  unique reverse-domain string, obtained in you Apple Developer Portal
 				    defaultNotificationTitle: 'Pushwoosh', // sets a default title for push notifications
 				    defaultNotificationImage: 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Logo_TV_2015.png', // URL to custom custom notification image
-				    autoSubscribe: false,*/
+				    autoSubscribe: false,
 				    tags: {
 				        'Sports Interest':  interest  	// optional, set custom Tags
 				    }										
