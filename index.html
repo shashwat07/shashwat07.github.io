@@ -108,11 +108,11 @@
 		<!-- Pushwoosh -->
 		<script type="text/javascript">
 
-			var interest = document.getElementById('myInterests').value;
-			
+			/*var interest = document.getElementById('myInterests').value;*/
+
 			var Pushwoosh = Pushwoosh || [];
 
-			Pushwoosh.push(['init', {
+			/*Pushwoosh.push(['init', {
 				    logLevel: 'info', // possible values: error, info, debug
 				    applicationCode: '68AE6-BD684', // you application code from Pushwoosh Control Panel
 				    safariWebsitePushID: 'web.com.example.domain', //  unique reverse-domain string, obtained in you Apple Developer Portal
@@ -123,7 +123,7 @@
 				    tags: {
 				        'Sports Interest':  interest  	// optional, set custom Tags
 				    }							
-				}]);
+				}]);*/
 
 
 			function disableDOM(){
@@ -139,7 +139,7 @@
 		
 		<script>
 			 function PushSubs(){
-			 	/*var interest = document.getElementById('myInterests').value;
+			 	var interest = document.getElementById('myInterests').value;
 			 	
 				Pushwoosh.push(['init', {
 					logLevel: 'info', // possible values: error, info, debug
@@ -152,7 +152,7 @@
 				    tags: {
 				        'Sports Interest':  interest  	// optional, set custom Tags
 				    }										
-				}]);*/
+				}]);
 
 			 	Pushwoosh.subscribe();
 			 }
