@@ -205,6 +205,9 @@ const animationTimeline = () => {
   const replyBtn = document.getElementById("replay");
   replyBtn.addEventListener("click", () => {
     tl.restart();
+	setTimeout(function(){
+      		document.getElementById("my_audio").play();
+    		}, 9000)
   });
 };
 
